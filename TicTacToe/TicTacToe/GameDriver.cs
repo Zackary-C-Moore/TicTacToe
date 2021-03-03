@@ -18,6 +18,9 @@ namespace TicTacToe
         //x always first
         char characterToPlace;
 
+        int numRows = 3;
+        int numCols = 3;
+
         public GameDriver()
         {
             characterToPlace = 'X';
@@ -100,6 +103,18 @@ namespace TicTacToe
         public void checkForWinner()
         {
 
+        }
+
+        public void displayBoard()
+        {
+            for(int r = 0; r < numRows; r++)
+            {
+                for(int c = 0; c<numCols; c++)
+                {
+                    Console.Write(gameBoard[r, c].getButton().Text + " ");
+                }
+                Console.WriteLine();
+            }
         }
 
     }
