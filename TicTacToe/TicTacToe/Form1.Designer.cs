@@ -58,7 +58,6 @@
             this.btn_2_2.Name = "btn_2_2";
             this.btn_2_2.Size = new System.Drawing.Size(250, 250);
             this.btn_2_2.TabIndex = 0;
-            this.btn_2_2.Text = "O";
             this.btn_2_2.UseVisualStyleBackColor = true;
             this.btn_2_2.Click += new System.EventHandler(this.buttonClickEvent);
             // 
@@ -71,7 +70,6 @@
             this.btn_2_1.Name = "btn_2_1";
             this.btn_2_1.Size = new System.Drawing.Size(250, 250);
             this.btn_2_1.TabIndex = 1;
-            this.btn_2_1.Text = "O";
             this.btn_2_1.UseVisualStyleBackColor = true;
             this.btn_2_1.Click += new System.EventHandler(this.buttonClickEvent);
             // 
@@ -84,7 +82,6 @@
             this.btn_2_0.Name = "btn_2_0";
             this.btn_2_0.Size = new System.Drawing.Size(250, 250);
             this.btn_2_0.TabIndex = 2;
-            this.btn_2_0.Text = "O";
             this.btn_2_0.UseVisualStyleBackColor = true;
             this.btn_2_0.Click += new System.EventHandler(this.buttonClickEvent);
             // 
@@ -97,7 +94,6 @@
             this.btn_1_2.Name = "btn_1_2";
             this.btn_1_2.Size = new System.Drawing.Size(250, 250);
             this.btn_1_2.TabIndex = 3;
-            this.btn_1_2.Text = "O";
             this.btn_1_2.UseVisualStyleBackColor = true;
             this.btn_1_2.Click += new System.EventHandler(this.buttonClickEvent);
             // 
@@ -110,7 +106,6 @@
             this.btn_1_1.Name = "btn_1_1";
             this.btn_1_1.Size = new System.Drawing.Size(250, 250);
             this.btn_1_1.TabIndex = 4;
-            this.btn_1_1.Text = "O";
             this.btn_1_1.UseVisualStyleBackColor = true;
             this.btn_1_1.Click += new System.EventHandler(this.buttonClickEvent);
             // 
@@ -123,7 +118,6 @@
             this.btn_1_0.Name = "btn_1_0";
             this.btn_1_0.Size = new System.Drawing.Size(250, 250);
             this.btn_1_0.TabIndex = 5;
-            this.btn_1_0.Text = "O";
             this.btn_1_0.UseVisualStyleBackColor = true;
             this.btn_1_0.Click += new System.EventHandler(this.buttonClickEvent);
             // 
@@ -136,7 +130,6 @@
             this.btn_0_2.Name = "btn_0_2";
             this.btn_0_2.Size = new System.Drawing.Size(250, 250);
             this.btn_0_2.TabIndex = 6;
-            this.btn_0_2.Text = "O";
             this.btn_0_2.UseVisualStyleBackColor = true;
             this.btn_0_2.Click += new System.EventHandler(this.buttonClickEvent);
             // 
@@ -149,7 +142,6 @@
             this.btn_0_0.Name = "btn_0_0";
             this.btn_0_0.Size = new System.Drawing.Size(250, 250);
             this.btn_0_0.TabIndex = 7;
-            this.btn_0_0.Text = "X";
             this.btn_0_0.UseVisualStyleBackColor = true;
             this.btn_0_0.Click += new System.EventHandler(this.buttonClickEvent);
             // 
@@ -162,7 +154,6 @@
             this.btn_0_1.Name = "btn_0_1";
             this.btn_0_1.Size = new System.Drawing.Size(250, 250);
             this.btn_0_1.TabIndex = 8;
-            this.btn_0_1.Text = "O";
             this.btn_0_1.UseVisualStyleBackColor = true;
             this.btn_0_1.Click += new System.EventHandler(this.buttonClickEvent);
             // 

@@ -17,6 +17,9 @@ namespace TicTacToe
         {
             InitializeComponent();
             setupGame();
+            //this will be determined by who goes first
+            //The player will determine who goes first (random, AI, or Player)
+            GD.setAICharacter('X');
             GD.displayBoard();
 
             //while(GD.getGameOver() == false)
@@ -53,7 +56,7 @@ namespace TicTacToe
 
                 //Console.WriteLine(row + "  " + col);
 
-                newCell = new Cell(row, GD.getColumnLetter(col), button, Convert.ToChar(button.Text));
+                newCell = new Cell(row, GD.getColumnLetter(col), button, '-');
 
                 board[row, col] = newCell;
             }
@@ -94,6 +97,12 @@ namespace TicTacToe
             cell.getButton().Text = characterToPlace.ToString();
             GD.setCellGameBoard(cell, row, col);
 
+            cell.getButton().Enabled = false;
+            GD.checkForWinner();
+            //change the symbol for the next persons turn
+            GD.setCharacterToPlace();
+            //disable the button
+            
             GD.displayBoard();
         }
     }
