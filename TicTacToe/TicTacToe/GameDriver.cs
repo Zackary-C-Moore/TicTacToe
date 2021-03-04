@@ -66,6 +66,16 @@ namespace TicTacToe
             return AIChar;
         }
 
+        public int getNumRows()
+        {
+            return numRows;
+        }
+
+        public int getNumCols()
+        {
+            return numCols;
+        }
+
         //Setters
         public void setTurn(int x)
         {

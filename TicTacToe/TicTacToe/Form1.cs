@@ -17,6 +17,7 @@ namespace TicTacToe
         {
             InitializeComponent();
             setupGame();
+            disableAllButtons();
             determinePlayerOrder();
             GD.displayBoard();
 
@@ -40,7 +41,7 @@ namespace TicTacToe
 
             //I could just hardcode these but I have asperations to make this work with a larger grid
             //Cycle through all of the buttons on the form.
-            foreach (var button in this.Controls.OfType<Button>())
+            foreach (var button in this.panel_gameBoard.Controls.OfType<Button>())
             {
                 //parse the name of the button to get the row and col information
                 //names for the cells follow a specific naming standard (row by column eg. btn_0_0).
@@ -113,6 +114,7 @@ namespace TicTacToe
         {
             
             RadioButton rb = sender as RadioButton;
+            lbl_errorMsg.Visible = false;
             if (rb.Name == "rb_AI")
             {
                 //this will be determined by who goes first
@@ -120,7 +122,7 @@ namespace TicTacToe
                 GD.setAICharacter('X');
                 GD.setTurn(0);
             }
-            else if (rb.Name == "rb_Player")
+            else if (rb.Name == "rb_player")
             {
                 GD.setAICharacter('O');
                 GD.setTurn(1);
@@ -145,12 +147,58 @@ namespace TicTacToe
 
         public void enableAllButtons()
         {
+            for (int r = 0; r < GD.getNumRows(); r++)
+            {
+                for (int c = 0; c < GD.getNumCols(); c++)
+                {
+                    if (GD.getGameBoardCell(r, c).getValue() == '-')
+                    {
+                        GD.getGameBoardCell(r, c).getButton().Enabled = true;
+                    }
 
+                }
+            }
         }
 
         public void disableAllButtons()
         {
+            for (int r = 0; r < GD.getNumRows(); r++)
+            {
+                for (int c = 0; c < GD.getNumCols(); c++)
+                {
+                    if (GD.getGameBoardCell(r, c).getValue() == '-')
+                    {
+                        GD.getGameBoardCell(r, c).getButton().Enabled = false;
+                    }
 
+                }
+            }
+        }
+
+        private void btn_startGame_Click(object sender, EventArgs e)
+        {
+            if(rb_AI.Checked || rb_player.Checked || rb_random.Checked)
+            {
+                //Start Game
+            }
+            else
+            {
+                //error message
+                //must choose an option.
+                lbl_errorMsg.Visible = true;
+            }
+        }
+
+        private void btn_newGame_Click(object sender, EventArgs e)
+        {
+            Form1 frm1 = new Form1();
+            frm1.Show();
+            this.Hide();
+        }
+
+        private void btn_exitGame_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
