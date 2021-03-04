@@ -17,9 +17,7 @@ namespace TicTacToe
         {
             InitializeComponent();
             setupGame();
-            //this will be determined by who goes first
-            //The player will determine who goes first (random, AI, or Player)
-            GD.setAICharacter('X');
+            determinePlayerOrder();
             GD.displayBoard();
 
             //while(GD.getGameOver() == false)
@@ -104,6 +102,55 @@ namespace TicTacToe
             //disable the button
             
             GD.displayBoard();
+        }
+
+        public void determinePlayerOrder()
+        {
+            
+        }
+
+        private void radioButtonClickEvent(object sender, EventArgs e)
+        {
+            
+            RadioButton rb = sender as RadioButton;
+            if (rb.Name == "rb_AI")
+            {
+                //this will be determined by who goes first
+                //The player will determine who goes first (random, AI, or Player)
+                GD.setAICharacter('X');
+                GD.setTurn(0);
+            }
+            else if (rb.Name == "rb_Player")
+            {
+                GD.setAICharacter('O');
+                GD.setTurn(1);
+            }
+            else if (rb.Name.Equals("rb_random"))
+            {
+                Random rand = new Random();
+                int num = rand.Next(0, 2);
+                
+                if(num == 0)
+                {
+                    GD.setAICharacter('X');
+                    GD.setTurn(0);
+                }
+                else
+                {
+                    GD.setAICharacter('O');
+                    GD.setTurn(1);
+                }
+            }
+        }
+
+        public void enableAllButtons()
+        {
+
+        }
+
+        public void disableAllButtons()
+        {
+
         }
     }
 }

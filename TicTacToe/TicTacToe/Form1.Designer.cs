@@ -47,6 +47,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rb_player = new System.Windows.Forms.RadioButton();
+            this.rb_AI = new System.Windows.Forms.RadioButton();
+            this.rb_random = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_2_2
@@ -249,11 +254,60 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "0";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rb_player);
+            this.groupBox1.Controls.Add(this.rb_AI);
+            this.groupBox1.Controls.Add(this.rb_random);
+            this.groupBox1.Location = new System.Drawing.Point(54, 1219);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(381, 158);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Who goes first...";
+            // 
+            // rb_player
+            // 
+            this.rb_player.AutoSize = true;
+            this.rb_player.Location = new System.Drawing.Point(17, 104);
+            this.rb_player.Name = "rb_player";
+            this.rb_player.Size = new System.Drawing.Size(104, 29);
+            this.rb_player.TabIndex = 2;
+            this.rb_player.TabStop = true;
+            this.rb_player.Text = "Player";
+            this.rb_player.UseVisualStyleBackColor = true;
+            this.rb_player.Click += new System.EventHandler(this.radioButtonClickEvent);
+            // 
+            // rb_AI
+            // 
+            this.rb_AI.AutoSize = true;
+            this.rb_AI.Location = new System.Drawing.Point(17, 69);
+            this.rb_AI.Name = "rb_AI";
+            this.rb_AI.Size = new System.Drawing.Size(62, 29);
+            this.rb_AI.TabIndex = 1;
+            this.rb_AI.TabStop = true;
+            this.rb_AI.Text = "AI";
+            this.rb_AI.UseVisualStyleBackColor = true;
+            this.rb_AI.Click += new System.EventHandler(this.radioButtonClickEvent);
+            // 
+            // rb_random
+            // 
+            this.rb_random.AutoSize = true;
+            this.rb_random.Location = new System.Drawing.Point(17, 34);
+            this.rb_random.Name = "rb_random";
+            this.rb_random.Size = new System.Drawing.Size(123, 29);
+            this.rb_random.TabIndex = 0;
+            this.rb_random.TabStop = true;
+            this.rb_random.Text = "Random";
+            this.rb_random.UseVisualStyleBackColor = true;
+            this.rb_random.Click += new System.EventHandler(this.radioButtonClickEvent);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1474, 1447);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -275,6 +329,8 @@
             this.Controls.Add(this.btn_2_2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,6 +357,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rb_AI;
+        private System.Windows.Forms.RadioButton rb_random;
+        private System.Windows.Forms.RadioButton rb_player;
     }
 }
 

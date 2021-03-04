@@ -67,16 +67,9 @@ namespace TicTacToe
         }
 
         //Setters
-        public void setTurn()
+        public void setTurn(int x)
         {
-            if(turn == 0)
-            {
-                turn = 1;
-            }
-            else
-            {
-                turn = 0;
-            }
+            turn = x;
         }
 
         public void setGameOver()
