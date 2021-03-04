@@ -10,14 +10,19 @@ namespace TicTacToe
     class Cell
     {
         //1 2 or 3
-        char row;
+        int row;
         //a b or c
         char col;
         public Button btn;
         //x or o
         char value;
 
-        public Cell(char row, char col, Button btn, char value)
+        public Cell()
+        {
+
+        }
+
+        public Cell(int row, char col, Button btn, char value)
         {
             this.row = row;
             this.col = col;
@@ -25,10 +30,14 @@ namespace TicTacToe
             this.value = value;
         }
 
-        //not going to use setters here
+        //setters
+        public void setValue(char v)
+        {
+            value = v;
+        }
 
         //getters
-        public char getRow()
+        public int getRow()
         {
             return row;
         }

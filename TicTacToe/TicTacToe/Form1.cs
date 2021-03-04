@@ -19,6 +19,11 @@ namespace TicTacToe
             setupGame();
             GD.displayBoard();
 
+            //while(GD.getGameOver() == false)
+            //{
+
+            //}
+
         }
 
         public void setupGame()
@@ -26,46 +31,70 @@ namespace TicTacToe
             string name;
             char delim = '_';
             int posDelim;
-            char col;
-            char row;
+            int col;
+            int row;
             Cell newCell;
             Cell[,] board = new Cell[3, 3];
-            int r = 0;
-            int c = 0;
+
+
             //I could just hardcode these but I have asperations to make this work with a larger grid
             //Cycle through all of the buttons on the form.
-            foreach(var button in this.Controls.OfType<Button>())
+            foreach (var button in this.Controls.OfType<Button>())
             {
+                //parse the name of the button to get the row and col information
+                //names for the cells follow a specific naming standard (row by column eg. btn_0_0).
+                //I will convert the columns to be letters in the GameDriver class.
                 name = button.Name;
                 posDelim = name.IndexOf(delim);
-                col = char.Parse(name.Substring(posDelim + 1, 1));
-                row = char.Parse(name.Substring(posDelim + 2));
+                row = Int32.Parse(name.Substring(posDelim + 1, 1));
+                name = name.Substring(posDelim + 2);
+                posDelim = name.IndexOf(delim);
+                col = Int32.Parse(name.Substring(posDelim + 1));
 
-                newCell = new Cell(row, col, button, ' ');
+                //Console.WriteLine(row + "  " + col);
 
-                if(col == 'A')
-                {
-                    c = 0;
-                }
-                else if(col == 'B')
-                {
-                    c = 1;
-                }
-                else if(col == 'C')
-                {
-                    c = 2;
-                }
+                newCell = new Cell(row, GD.getColumnLetter(col), button, Convert.ToChar(button.Text));
 
-                board[r, c] = newCell;
-
-                if(c == 2)
-                {
-                    r++;
-                }
+                board[row, col] = newCell;
             }
 
             GD.setGameBoard(board);
 
+        }
+
+        private void buttonClickEvent(object sender, EventArgs e)
+        {
+            string name;
+            char delim = '_';
+            int posDelim;
+            int col;
+            int row;
+
+            Button button = sender as Button;
+            //used to store the information about the cell (button) that I pressed.
+            Cell cell = new Cell();
+            char characterToPlace = GD.getCharacterToPlace();
+
+            //parse the name
+            //find the row
+            //find the column
+            //write if statements for row
+            //write code below once.
+
+            name = button.Name;
+            posDelim = name.IndexOf(delim);
+            row = Int32.Parse(name.Substring(posDelim + 1, 1));
+            name = name.Substring(posDelim + 2);
+            posDelim = name.IndexOf(delim);
+            col = Int32.Parse(name.Substring(posDelim + 1));
+
+
+            cell = GD.getGameBoardCell(row, col);
+            cell.setValue(characterToPlace);
+            cell.getButton().Text = characterToPlace.ToString();
+            GD.setCellGameBoard(cell, row, col);
+
+            GD.displayBoard();
         }
     }
 }

@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_C1 = new System.Windows.Forms.Button();
-            this.btn_B1 = new System.Windows.Forms.Button();
-            this.btn_A1 = new System.Windows.Forms.Button();
-            this.btn_C2 = new System.Windows.Forms.Button();
-            this.btn_B2 = new System.Windows.Forms.Button();
-            this.btn_A2 = new System.Windows.Forms.Button();
-            this.btn_C3 = new System.Windows.Forms.Button();
-            this.btn_A3 = new System.Windows.Forms.Button();
-            this.btn_B3 = new System.Windows.Forms.Button();
+            this.btn_2_2 = new System.Windows.Forms.Button();
+            this.btn_2_1 = new System.Windows.Forms.Button();
+            this.btn_2_0 = new System.Windows.Forms.Button();
+            this.btn_1_2 = new System.Windows.Forms.Button();
+            this.btn_1_1 = new System.Windows.Forms.Button();
+            this.btn_1_0 = new System.Windows.Forms.Button();
+            this.btn_0_2 = new System.Windows.Forms.Button();
+            this.btn_0_0 = new System.Windows.Forms.Button();
+            this.btn_0_1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -49,113 +49,122 @@
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btn_C1
+            // btn_2_2
             // 
-            this.btn_C1.FlatAppearance.BorderSize = 0;
-            this.btn_C1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_C1.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_C1.Location = new System.Drawing.Point(909, 867);
-            this.btn_C1.Name = "btn_C1";
-            this.btn_C1.Size = new System.Drawing.Size(250, 250);
-            this.btn_C1.TabIndex = 0;
-            this.btn_C1.Text = "O";
-            this.btn_C1.UseVisualStyleBackColor = true;
+            this.btn_2_2.FlatAppearance.BorderSize = 0;
+            this.btn_2_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_2_2.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_2_2.Location = new System.Drawing.Point(909, 867);
+            this.btn_2_2.Name = "btn_2_2";
+            this.btn_2_2.Size = new System.Drawing.Size(250, 250);
+            this.btn_2_2.TabIndex = 0;
+            this.btn_2_2.Text = "O";
+            this.btn_2_2.UseVisualStyleBackColor = true;
+            this.btn_2_2.Click += new System.EventHandler(this.buttonClickEvent);
             // 
-            // btn_B1
+            // btn_2_1
             // 
-            this.btn_B1.FlatAppearance.BorderSize = 0;
-            this.btn_B1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_B1.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_B1.Location = new System.Drawing.Point(635, 867);
-            this.btn_B1.Name = "btn_B1";
-            this.btn_B1.Size = new System.Drawing.Size(250, 250);
-            this.btn_B1.TabIndex = 1;
-            this.btn_B1.Text = "O";
-            this.btn_B1.UseVisualStyleBackColor = true;
+            this.btn_2_1.FlatAppearance.BorderSize = 0;
+            this.btn_2_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_2_1.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_2_1.Location = new System.Drawing.Point(635, 867);
+            this.btn_2_1.Name = "btn_2_1";
+            this.btn_2_1.Size = new System.Drawing.Size(250, 250);
+            this.btn_2_1.TabIndex = 1;
+            this.btn_2_1.Text = "O";
+            this.btn_2_1.UseVisualStyleBackColor = true;
+            this.btn_2_1.Click += new System.EventHandler(this.buttonClickEvent);
             // 
-            // btn_A1
+            // btn_2_0
             // 
-            this.btn_A1.FlatAppearance.BorderSize = 0;
-            this.btn_A1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_A1.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_A1.Location = new System.Drawing.Point(330, 867);
-            this.btn_A1.Name = "btn_A1";
-            this.btn_A1.Size = new System.Drawing.Size(250, 250);
-            this.btn_A1.TabIndex = 2;
-            this.btn_A1.Text = "X";
-            this.btn_A1.UseVisualStyleBackColor = true;
+            this.btn_2_0.FlatAppearance.BorderSize = 0;
+            this.btn_2_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_2_0.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_2_0.Location = new System.Drawing.Point(330, 867);
+            this.btn_2_0.Name = "btn_2_0";
+            this.btn_2_0.Size = new System.Drawing.Size(250, 250);
+            this.btn_2_0.TabIndex = 2;
+            this.btn_2_0.Text = "O";
+            this.btn_2_0.UseVisualStyleBackColor = true;
+            this.btn_2_0.Click += new System.EventHandler(this.buttonClickEvent);
             // 
-            // btn_C2
+            // btn_1_2
             // 
-            this.btn_C2.FlatAppearance.BorderSize = 0;
-            this.btn_C2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_C2.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_C2.Location = new System.Drawing.Point(909, 583);
-            this.btn_C2.Name = "btn_C2";
-            this.btn_C2.Size = new System.Drawing.Size(250, 250);
-            this.btn_C2.TabIndex = 3;
-            this.btn_C2.Text = "X";
-            this.btn_C2.UseVisualStyleBackColor = true;
+            this.btn_1_2.FlatAppearance.BorderSize = 0;
+            this.btn_1_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_1_2.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_1_2.Location = new System.Drawing.Point(909, 583);
+            this.btn_1_2.Name = "btn_1_2";
+            this.btn_1_2.Size = new System.Drawing.Size(250, 250);
+            this.btn_1_2.TabIndex = 3;
+            this.btn_1_2.Text = "O";
+            this.btn_1_2.UseVisualStyleBackColor = true;
+            this.btn_1_2.Click += new System.EventHandler(this.buttonClickEvent);
             // 
-            // btn_B2
+            // btn_1_1
             // 
-            this.btn_B2.FlatAppearance.BorderSize = 0;
-            this.btn_B2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_B2.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_B2.Location = new System.Drawing.Point(635, 573);
-            this.btn_B2.Name = "btn_B2";
-            this.btn_B2.Size = new System.Drawing.Size(250, 250);
-            this.btn_B2.TabIndex = 4;
-            this.btn_B2.Text = "X";
-            this.btn_B2.UseVisualStyleBackColor = true;
+            this.btn_1_1.FlatAppearance.BorderSize = 0;
+            this.btn_1_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_1_1.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_1_1.Location = new System.Drawing.Point(635, 573);
+            this.btn_1_1.Name = "btn_1_1";
+            this.btn_1_1.Size = new System.Drawing.Size(250, 250);
+            this.btn_1_1.TabIndex = 4;
+            this.btn_1_1.Text = "O";
+            this.btn_1_1.UseVisualStyleBackColor = true;
+            this.btn_1_1.Click += new System.EventHandler(this.buttonClickEvent);
             // 
-            // btn_A2
+            // btn_1_0
             // 
-            this.btn_A2.FlatAppearance.BorderSize = 0;
-            this.btn_A2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_A2.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_A2.Location = new System.Drawing.Point(330, 583);
-            this.btn_A2.Name = "btn_A2";
-            this.btn_A2.Size = new System.Drawing.Size(250, 250);
-            this.btn_A2.TabIndex = 5;
-            this.btn_A2.Text = "O";
-            this.btn_A2.UseVisualStyleBackColor = true;
+            this.btn_1_0.FlatAppearance.BorderSize = 0;
+            this.btn_1_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_1_0.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_1_0.Location = new System.Drawing.Point(330, 583);
+            this.btn_1_0.Name = "btn_1_0";
+            this.btn_1_0.Size = new System.Drawing.Size(250, 250);
+            this.btn_1_0.TabIndex = 5;
+            this.btn_1_0.Text = "O";
+            this.btn_1_0.UseVisualStyleBackColor = true;
+            this.btn_1_0.Click += new System.EventHandler(this.buttonClickEvent);
             // 
-            // btn_C3
+            // btn_0_2
             // 
-            this.btn_C3.FlatAppearance.BorderSize = 0;
-            this.btn_C3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_C3.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_C3.Location = new System.Drawing.Point(909, 279);
-            this.btn_C3.Name = "btn_C3";
-            this.btn_C3.Size = new System.Drawing.Size(250, 250);
-            this.btn_C3.TabIndex = 6;
-            this.btn_C3.Text = "O";
-            this.btn_C3.UseVisualStyleBackColor = true;
+            this.btn_0_2.FlatAppearance.BorderSize = 0;
+            this.btn_0_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_0_2.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_0_2.Location = new System.Drawing.Point(909, 279);
+            this.btn_0_2.Name = "btn_0_2";
+            this.btn_0_2.Size = new System.Drawing.Size(250, 250);
+            this.btn_0_2.TabIndex = 6;
+            this.btn_0_2.Text = "O";
+            this.btn_0_2.UseVisualStyleBackColor = true;
+            this.btn_0_2.Click += new System.EventHandler(this.buttonClickEvent);
             // 
-            // btn_A3
+            // btn_0_0
             // 
-            this.btn_A3.FlatAppearance.BorderSize = 0;
-            this.btn_A3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_A3.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_A3.Location = new System.Drawing.Point(330, 279);
-            this.btn_A3.Name = "btn_A3";
-            this.btn_A3.Size = new System.Drawing.Size(250, 250);
-            this.btn_A3.TabIndex = 7;
-            this.btn_A3.Text = "X";
-            this.btn_A3.UseVisualStyleBackColor = true;
+            this.btn_0_0.FlatAppearance.BorderSize = 0;
+            this.btn_0_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_0_0.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_0_0.Location = new System.Drawing.Point(330, 279);
+            this.btn_0_0.Name = "btn_0_0";
+            this.btn_0_0.Size = new System.Drawing.Size(250, 250);
+            this.btn_0_0.TabIndex = 7;
+            this.btn_0_0.Text = "X";
+            this.btn_0_0.UseVisualStyleBackColor = true;
+            this.btn_0_0.Click += new System.EventHandler(this.buttonClickEvent);
             // 
-            // btn_B3
+            // btn_0_1
             // 
-            this.btn_B3.FlatAppearance.BorderSize = 0;
-            this.btn_B3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_B3.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_B3.Location = new System.Drawing.Point(635, 279);
-            this.btn_B3.Name = "btn_B3";
-            this.btn_B3.Size = new System.Drawing.Size(250, 250);
-            this.btn_B3.TabIndex = 8;
-            this.btn_B3.Text = "X";
-            this.btn_B3.UseVisualStyleBackColor = true;
+            this.btn_0_1.FlatAppearance.BorderSize = 0;
+            this.btn_0_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_0_1.Font = new System.Drawing.Font("Trebuchet MS", 85.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_0_1.Location = new System.Drawing.Point(635, 279);
+            this.btn_0_1.Name = "btn_0_1";
+            this.btn_0_1.Size = new System.Drawing.Size(250, 250);
+            this.btn_0_1.TabIndex = 8;
+            this.btn_0_1.Text = "O";
+            this.btn_0_1.UseVisualStyleBackColor = true;
+            this.btn_0_1.Click += new System.EventHandler(this.buttonClickEvent);
             // 
             // panel1
             // 
@@ -193,7 +202,7 @@
             // 
             this.A.AutoSize = true;
             this.A.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.A.Location = new System.Drawing.Point(420, 1161);
+            this.A.Location = new System.Drawing.Point(419, 202);
             this.A.Name = "A";
             this.A.Size = new System.Drawing.Size(36, 40);
             this.A.TabIndex = 13;
@@ -203,7 +212,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(732, 1161);
+            this.label1.Location = new System.Drawing.Point(731, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 40);
             this.label1.TabIndex = 14;
@@ -213,7 +222,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1013, 1161);
+            this.label2.Location = new System.Drawing.Point(1012, 202);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 40);
             this.label2.TabIndex = 15;
@@ -227,7 +236,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 40);
             this.label3.TabIndex = 16;
-            this.label3.Text = "1";
+            this.label3.Text = "2";
             // 
             // label4
             // 
@@ -237,7 +246,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 40);
             this.label4.TabIndex = 17;
-            this.label4.Text = "2";
+            this.label4.Text = "1";
             // 
             // label5
             // 
@@ -247,7 +256,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 40);
             this.label5.TabIndex = 18;
-            this.label5.Text = "3";
+            this.label5.Text = "0";
             // 
             // Form1
             // 
@@ -264,15 +273,15 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_A3);
-            this.Controls.Add(this.btn_B3);
-            this.Controls.Add(this.btn_C3);
-            this.Controls.Add(this.btn_A2);
-            this.Controls.Add(this.btn_B2);
-            this.Controls.Add(this.btn_C2);
-            this.Controls.Add(this.btn_A1);
-            this.Controls.Add(this.btn_B1);
-            this.Controls.Add(this.btn_C1);
+            this.Controls.Add(this.btn_0_0);
+            this.Controls.Add(this.btn_0_1);
+            this.Controls.Add(this.btn_0_2);
+            this.Controls.Add(this.btn_1_0);
+            this.Controls.Add(this.btn_1_1);
+            this.Controls.Add(this.btn_1_2);
+            this.Controls.Add(this.btn_2_0);
+            this.Controls.Add(this.btn_2_1);
+            this.Controls.Add(this.btn_2_2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -282,15 +291,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_C1;
-        private System.Windows.Forms.Button btn_B1;
-        private System.Windows.Forms.Button btn_A1;
-        private System.Windows.Forms.Button btn_C2;
-        private System.Windows.Forms.Button btn_B2;
-        private System.Windows.Forms.Button btn_A2;
-        private System.Windows.Forms.Button btn_C3;
-        private System.Windows.Forms.Button btn_A3;
-        private System.Windows.Forms.Button btn_B3;
+        private System.Windows.Forms.Button btn_2_2;
+        private System.Windows.Forms.Button btn_2_1;
+        private System.Windows.Forms.Button btn_2_0;
+        private System.Windows.Forms.Button btn_1_2;
+        private System.Windows.Forms.Button btn_1_1;
+        private System.Windows.Forms.Button btn_1_0;
+        private System.Windows.Forms.Button btn_0_2;
+        private System.Windows.Forms.Button btn_0_0;
+        private System.Windows.Forms.Button btn_0_1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

@@ -17,6 +17,7 @@ namespace TicTacToe
         Cell[,] gameBoard = new Cell[3, 3];
         //x always first
         char characterToPlace;
+        char[] columnLookupTable = { 'A', 'B', 'C' };
 
         int numRows = 3;
         int numCols = 3;
@@ -40,7 +41,7 @@ namespace TicTacToe
         {
             return winner;
         }
-        public int getCharacterToPlace()
+        public char getCharacterToPlace()
         {
             return characterToPlace;
         }
@@ -52,6 +53,11 @@ namespace TicTacToe
         public Cell getGameBoardCell(int r, int c)
         {
             return gameBoard[r, c];
+        }
+
+        public char getColumnLetter(int n)
+        {
+            return columnLookupTable[n];
         }
 
         //Setters
@@ -111,10 +117,12 @@ namespace TicTacToe
             {
                 for(int c = 0; c<numCols; c++)
                 {
-                    Console.Write(gameBoard[r, c].getButton().Text + " ");
+                    //Console.Write(gameBoard[r, c].getCol() + "" + gameBoard[r,c].getRow() + " ");
+                    Console.Write(gameBoard[r, c].getValue());
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("===========================================");
         }
 
     }
