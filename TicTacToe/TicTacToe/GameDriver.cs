@@ -12,7 +12,7 @@ namespace TicTacToe
         bool playerTurn;
         bool gameOver = false;
         //0 = computer 1 = player
-        int winner;
+        bool playerWinner = false;
         //board
         Cell[,] gameBoard = new Cell[3, 3];
         //x always first
@@ -38,9 +38,9 @@ namespace TicTacToe
         {
             return gameOver;
         }
-        public int getWinner()
+        public bool getPlayeWinner()
         {
-            return winner;
+            return playerWinner;
         }
         public char getCharacterToPlace()
         {
@@ -87,9 +87,9 @@ namespace TicTacToe
             gameOver = true;
         }
 
-        public void setWinner(int w)
+        public void setPlayerWinner(bool w)
         {
-            winner = w;
+            playerWinner = w;
         }
 
         public void setCharacterToPlace()
@@ -122,71 +122,100 @@ namespace TicTacToe
         //Game Funcitons
         public void checkForWinner()
         {
-            int numInRow = 0;
+            if(!gameOver)
+            {
+                gameOver = horizontalWinCheck();
+            }
+
+            if(!gameOver)
+            {
+                gameOver = verticalWinCheck();
+            }
+
+            if (!gameOver)
+            {
+                gameOver = bottomUpDiagonalWinCheck();
+            }
+
+            if (!gameOver)
+            {
+                gameOver = topDownDiagonalWinCheck();
+            }
+
+
+            if (gameOver)
+            {
+                determineWinner();
+            }
+        }
+
+        public bool horizontalWinCheck()
+        {
+            int cnt = 0;
             //Horizontal check
             for (int r = 0; r < numRows; r++)
             {
-                numInRow = 0;
+                cnt = 0;
                 for (int c = 0; c < numCols - 1; c++)
                 {
-                    if(gameBoard[r,c].getValue() != '-' && gameBoard[r,c].getValue() == gameBoard[r,c+1].getValue())
+                    if (gameBoard[r, c].getValue() != '-' && gameBoard[r, c].getValue() == gameBoard[r, c + 1].getValue())
                     {
-                        numInRow++;
+                        cnt++;
                     }
                     else
                     {
-                        numInRow = 0;
+                        cnt = 0;
                     }
 
-                    if(numInRow == 2)
+                    if (cnt == 2)
                     {
-                        gameOver = true;
                         Console.WriteLine("Game Over");
-                        break;
+                        return true;
                     }
                 }
-                if(gameOver)
-                {
-                    break;
-                }
-
             }
 
+            return false;
+        }
+
+        public bool verticalWinCheck()
+        {
+            int cnt;
             //Vertical Check
             for (int c = 0; c < numCols; c++)
             {
-                numInRow = 0;
+                cnt = 0;
                 for (int r = 0; r < numRows - 1; r++)
                 {
                     if (gameBoard[r, c].getValue() != '-' && gameBoard[r, c].getValue() == gameBoard[r + 1, c].getValue())
                     {
-                        numInRow++;
+                        cnt++;
                     }
                     else
                     {
-                        numInRow = 0;
+                        cnt = 0;
                     }
 
-                    if (numInRow == 2)
+                    if (cnt == 2)
                     {
-                        gameOver = true;
                         Console.WriteLine("Game Over");
-                        break;
+                        return true;
                     }
-                }
-                if(gameOver)
-                {
-                    break;
                 }
             }
 
+            return false;
+        }
+
+        public bool bottomUpDiagonalWinCheck()
+        {
             //Diagonal Check - lower left to upper right.
-            int row_1 = numRows - 1;
-            int col_1 = 0;
+            int row = numRows - 1;
+            int col = 0;
             int cnt = 0;
-            while(row_1 > 0)
+            while (row > 0)
             {
-                if(gameBoard[row_1, col_1].getValue() != '-' && gameBoard[row_1, col_1].getValue() == gameBoard[row_1 - 1, col_1 + 1].getValue())
+                if (gameBoard[row, col].getValue() != '-' && gameBoard[row, col].getValue() == gameBoard[row - 1, col + 1].getValue())
                 {
                     cnt++;
                 }
@@ -195,54 +224,59 @@ namespace TicTacToe
                     break;
                 }
 
-                col_1++;
-                row_1--;
+                col++;
+                row--;
             }
-            if(cnt == 2)
+            if (cnt == 2)
             {
-                gameOver = true;
                 Console.WriteLine("Game Over");
+                return true;
             }
 
-            //Diagonal Check - lower left to upper right.
-            int row_2 = 0;
-            int col_2 = 0;
-            int cnt2 = 0;
-            while (row_2 < numRows - 1)
+            return false;
+        }
+
+        public bool topDownDiagonalWinCheck()
+        {
+            //Diagonal Check - top left to lower right.
+            int row = 0;
+            int col = 0;
+            int cnt = 0;
+            while (row < numRows - 1)
             {
-                if (gameBoard[row_2, col_2].getValue() != '-' && gameBoard[row_2, col_2].getValue() == gameBoard[row_2 + 1, col_2 + 1].getValue())
+                if (gameBoard[row, col].getValue() != '-' && gameBoard[row, col].getValue() == gameBoard[row + 1, col + 1].getValue())
                 {
-                    cnt2++;
+                    cnt++;
                 }
                 else
                 {
                     break;
                 }
 
-                col_2++;
-                row_2++;
+                col++;
+                row++;
             }
-            if (cnt2 == 2)
+            if (cnt == 2)
             {
-                gameOver = true;
                 Console.WriteLine("Game Over");
+                return true;
             }
 
-            if(gameOver)
-            {
-                determineWinner();
-            }
+            return false;
         }
 
         public void determineWinner()
         {
-            if(AIChar == characterToPlace)
+            //Console.WriteLine(characterToPlace);
+            if(AIChar != characterToPlace)
             {
-                Console.WriteLine("AI wins");
+                Console.WriteLine("Player Wins");
+                playerWinner = true;
             }
             else
             {
-                Console.WriteLine("Player Wins");
+                Console.WriteLine("AI Wins");
+                playerWinner = false;
             }
         }
         public void displayBoard()

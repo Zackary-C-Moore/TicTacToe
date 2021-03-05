@@ -60,11 +60,12 @@ namespace TicTacToe
 
         private void buttonClickEvent(object sender, EventArgs e)
         {
-            if (GD.getPlayerTurn() == true)
-            {
+            //comment this out to keep testing
+            //if (GD.getPlayerTurn() == true)
+            //{
                 Button button = sender as Button;
                 playerMove(button);
-            }
+            //}
                 
         }
 
@@ -101,13 +102,11 @@ namespace TicTacToe
 
             //disable the button that the user pressed
             cell.getButton().Enabled = false;
-            GD.checkForWinner();
-            //change the symbol for the next persons turn
-            GD.setCharacterToPlace();
-            //change to AI turn
-            GD.setPlayerTurn(false);
+            
 
             GD.displayBoard();
+
+            afterMoveSteps();
         }
 
 
@@ -236,6 +235,25 @@ namespace TicTacToe
         private void btn_exitGame_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        public void afterMoveSteps()
+        {
+            //see if the game was won
+            GD.checkForWinner();
+            if (GD.getGameOver() == false)
+            {
+                //change the symbol for the next persons turn
+                GD.setCharacterToPlace();
+                //change to AI turn
+                GD.setPlayerTurn(false);
+            }
+            else
+            {
+                disableAllButtons();
+                //Display who won
+                //Draw line on winning sequence
+            }
         }
     }
 }
