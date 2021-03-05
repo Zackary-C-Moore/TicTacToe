@@ -16,19 +16,13 @@ namespace TicTacToe
         public Form1()
         {
             InitializeComponent();
-            setupGame();
+            setupBoard();
             disableAllButtons();
-            determinePlayerOrder();
             GD.displayBoard();
-
-            //while(GD.getGameOver() == false)
-            //{
-
-            //}
 
         }
 
-        public void setupGame()
+        public void setupBoard()
         {
             string name;
             char delim = '_';
@@ -66,13 +60,22 @@ namespace TicTacToe
 
         private void buttonClickEvent(object sender, EventArgs e)
         {
+            if (GD.getPlayerTurn() == true)
+            {
+                Button button = sender as Button;
+                playerMove(button);
+            }
+                
+        }
+
+        public void playerMove(Button button)
+        {
+            Console.WriteLine("Here");
             string name;
             char delim = '_';
             int posDelim;
             int col;
             int row;
-
-            Button button = sender as Button;
             //used to store the information about the cell (button) that I pressed.
             Cell cell = new Cell();
             char characterToPlace = GD.getCharacterToPlace();
@@ -96,51 +99,69 @@ namespace TicTacToe
             cell.getButton().Text = characterToPlace.ToString();
             GD.setCellGameBoard(cell, row, col);
 
+            //disable the button that the user pressed
             cell.getButton().Enabled = false;
             GD.checkForWinner();
             //change the symbol for the next persons turn
             GD.setCharacterToPlace();
-            //disable the button
-            
+            //change to AI turn
+            GD.setPlayerTurn(false);
+
             GD.displayBoard();
         }
 
-        public void determinePlayerOrder()
-        {
-            
-        }
 
         private void radioButtonClickEvent(object sender, EventArgs e)
         {
-            
             RadioButton rb = sender as RadioButton;
+            determinePlayerOrder(rb);      
+        }
+
+        public void determinePlayerOrder(RadioButton rb)
+        {
             lbl_errorMsg.Visible = false;
+
+            lbl_xText.Text = null;
+            lbl_Otxt.Text = null;
+
             if (rb.Name == "rb_AI")
             {
                 //this will be determined by who goes first
                 //The player will determine who goes first (random, AI, or Player)
                 GD.setAICharacter('X');
-                GD.setTurn(0);
+                GD.setPlayerTurn(false);
+
+                lbl_Otxt.Text = "O: Player";
+                lbl_xText.Text += "X: AI";
             }
             else if (rb.Name == "rb_player")
             {
                 GD.setAICharacter('O');
-                GD.setTurn(1);
+                GD.setPlayerTurn(true);
+
+                lbl_Otxt.Text += "O: AI";
+                lbl_xText.Text += "X: Player";
             }
             else if (rb.Name.Equals("rb_random"))
             {
                 Random rand = new Random();
                 int num = rand.Next(0, 2);
-                
-                if(num == 0)
+
+                if (num == 0)
                 {
                     GD.setAICharacter('X');
-                    GD.setTurn(0);
+                    GD.setPlayerTurn(false);
+
+                    lbl_Otxt.Text += "O: Player";
+                    lbl_xText.Text += "X: AI";
                 }
                 else
                 {
                     GD.setAICharacter('O');
-                    GD.setTurn(1);
+                    GD.setPlayerTurn(true);
+
+                    lbl_Otxt.Text += "O: AI";
+                    lbl_xText.Text += "X: Player";
                 }
             }
         }
@@ -175,11 +196,27 @@ namespace TicTacToe
             }
         }
 
+        public void enableAllRadioButtons()
+        {
+            rb_AI.Enabled = true;
+            rb_player.Enabled = true;
+            rb_random.Enabled = true;
+        }
+
+        public void disableAllRadioButtons()
+        {
+            rb_AI.Enabled = false;
+            rb_player.Enabled = false;
+            rb_random.Enabled = false;
+        }
+
         private void btn_startGame_Click(object sender, EventArgs e)
         {
             if(rb_AI.Checked || rb_player.Checked || rb_random.Checked)
             {
                 //Start Game
+                enableAllButtons();
+                disableAllRadioButtons();
             }
             else
             {

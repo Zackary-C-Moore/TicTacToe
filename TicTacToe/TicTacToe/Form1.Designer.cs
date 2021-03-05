@@ -56,12 +56,16 @@
             this.btn_2_0 = new System.Windows.Forms.Button();
             this.btn_2_1 = new System.Windows.Forms.Button();
             this.btn_2_2 = new System.Windows.Forms.Button();
+            this.lbl_xText = new System.Windows.Forms.Label();
+            this.lbl_Otxt = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel_gameBoard.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_Otxt);
+            this.groupBox1.Controls.Add(this.lbl_xText);
             this.groupBox1.Controls.Add(this.rb_player);
             this.groupBox1.Controls.Add(this.rb_AI);
             this.groupBox1.Controls.Add(this.rb_random);
@@ -274,6 +278,7 @@
             this.btn_0_0.Size = new System.Drawing.Size(250, 250);
             this.btn_0_0.TabIndex = 26;
             this.btn_0_0.UseVisualStyleBackColor = true;
+            this.btn_0_0.Click += new System.EventHandler(this.buttonClickEvent);
             // 
             // btn_0_1
             // 
@@ -285,6 +290,7 @@
             this.btn_0_1.Size = new System.Drawing.Size(250, 250);
             this.btn_0_1.TabIndex = 27;
             this.btn_0_1.UseVisualStyleBackColor = true;
+            this.btn_0_1.Click += new System.EventHandler(this.buttonClickEvent);
             // 
             // btn_0_2
             // 
@@ -296,6 +302,7 @@
             this.btn_0_2.Size = new System.Drawing.Size(250, 250);
             this.btn_0_2.TabIndex = 25;
             this.btn_0_2.UseVisualStyleBackColor = true;
+            this.btn_0_2.Click += new System.EventHandler(this.buttonClickEvent);
             // 
             // btn_1_0
             // 
@@ -307,6 +314,7 @@
             this.btn_1_0.Size = new System.Drawing.Size(250, 250);
             this.btn_1_0.TabIndex = 24;
             this.btn_1_0.UseVisualStyleBackColor = true;
+            this.btn_1_0.Click += new System.EventHandler(this.buttonClickEvent);
             // 
             // btn_1_1
             // 
@@ -318,6 +326,7 @@
             this.btn_1_1.Size = new System.Drawing.Size(250, 250);
             this.btn_1_1.TabIndex = 23;
             this.btn_1_1.UseVisualStyleBackColor = true;
+            this.btn_1_1.Click += new System.EventHandler(this.buttonClickEvent);
             // 
             // btn_1_2
             // 
@@ -329,6 +338,7 @@
             this.btn_1_2.Size = new System.Drawing.Size(250, 250);
             this.btn_1_2.TabIndex = 22;
             this.btn_1_2.UseVisualStyleBackColor = true;
+            this.btn_1_2.Click += new System.EventHandler(this.buttonClickEvent);
             // 
             // btn_2_0
             // 
@@ -340,6 +350,7 @@
             this.btn_2_0.Size = new System.Drawing.Size(250, 250);
             this.btn_2_0.TabIndex = 21;
             this.btn_2_0.UseVisualStyleBackColor = true;
+            this.btn_2_0.Click += new System.EventHandler(this.buttonClickEvent);
             // 
             // btn_2_1
             // 
@@ -351,6 +362,7 @@
             this.btn_2_1.Size = new System.Drawing.Size(250, 250);
             this.btn_2_1.TabIndex = 20;
             this.btn_2_1.UseVisualStyleBackColor = true;
+            this.btn_2_1.Click += new System.EventHandler(this.buttonClickEvent);
             // 
             // btn_2_2
             // 
@@ -362,6 +374,25 @@
             this.btn_2_2.Size = new System.Drawing.Size(250, 250);
             this.btn_2_2.TabIndex = 19;
             this.btn_2_2.UseVisualStyleBackColor = true;
+            this.btn_2_2.Click += new System.EventHandler(this.buttonClickEvent);
+            // 
+            // lbl_xText
+            // 
+            this.lbl_xText.AutoSize = true;
+            this.lbl_xText.Location = new System.Drawing.Point(199, 34);
+            this.lbl_xText.Name = "lbl_xText";
+            this.lbl_xText.Size = new System.Drawing.Size(38, 25);
+            this.lbl_xText.TabIndex = 3;
+            this.lbl_xText.Text = "X: ";
+            // 
+            // lbl_Otxt
+            // 
+            this.lbl_Otxt.AutoSize = true;
+            this.lbl_Otxt.Location = new System.Drawing.Point(199, 69);
+            this.lbl_Otxt.Name = "lbl_Otxt";
+            this.lbl_Otxt.Size = new System.Drawing.Size(40, 25);
+            this.lbl_Otxt.TabIndex = 4;
+            this.lbl_Otxt.Text = "O: ";
             // 
             // Form1
             // 
@@ -414,6 +445,8 @@
         private System.Windows.Forms.Button btn_2_0;
         private System.Windows.Forms.Button btn_2_1;
         private System.Windows.Forms.Button btn_2_2;
+        private System.Windows.Forms.Label lbl_Otxt;
+        private System.Windows.Forms.Label lbl_xText;
     }
 }
 

@@ -9,7 +9,7 @@ namespace TicTacToe
     class GameDriver
     {
         //0 = computer 1 = player
-        int turn;
+        bool playerTurn;
         bool gameOver = false;
         //0 = computer 1 = player
         int winner;
@@ -30,9 +30,9 @@ namespace TicTacToe
 
 
         //Getters
-        public int getTurn()
+        public bool getPlayerTurn()
         {
-            return turn;
+            return playerTurn;
         }
         public bool getGameOver()
         {
@@ -77,9 +77,9 @@ namespace TicTacToe
         }
 
         //Setters
-        public void setTurn(int x)
+        public void setPlayerTurn(bool x)
         {
-            turn = x;
+            playerTurn = x;
         }
 
         public void setGameOver()
