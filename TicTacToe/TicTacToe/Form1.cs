@@ -66,10 +66,18 @@ namespace TicTacToe
             if (GD.getPlayerTurn() == true)
             {
                 Button button = sender as Button;
+                //Figures out what button was pressed and how to make the move
+                //after the player clicks their button the ai can make their turn
+                //If the ai needs to go first that functionality is handled on the start button press.
                 playerMove(button);
-                if(GD.getGameOver() == false)
+                //handles gui and making the move.
+                //afterMoveSteps();
+                if (GD.getGameOver() == false)
                 {
-                    AIMoveSteps();
+                    //After the user makes their move the ai can make its move.
+                    AIMakeMove();
+                    ////handles gui and making the move
+                    //afterMoveSteps();
                 }
                 
             }
@@ -109,9 +117,16 @@ namespace TicTacToe
 
             //disable the button that the user pressed
             cell.getButton().Enabled = false;
-            
 
-            afterMoveSteps();
+            //make the move on the board array and determine what to do after the specified move.
+            GD.makeMove();
+
+            if (GD.getGameOver() == true)
+            {
+                disableAllButtons();
+                //display who won
+                displayWinner();
+            }
         }
 
 
@@ -225,6 +240,8 @@ namespace TicTacToe
             btn_startGame.Enabled = true;
         }
 
+        
+        //used to start the game.
         private void btn_startGame_Click(object sender, EventArgs e)
         {
             if(rb_AI.Checked || rb_player.Checked || rb_random.Checked)
@@ -241,7 +258,11 @@ namespace TicTacToe
                     disableAllButtons();
                     disableAllRadioButtons();
                     disableStartButton();
-                    AIMoveSteps();
+
+                    //used when the ai needs to go first
+                    AIMakeMove();
+                    ////handles gui and making the move
+                    //afterMoveSteps();
                 }
             }
             else
@@ -264,50 +285,24 @@ namespace TicTacToe
             Application.Exit();
         }
 
-        public void afterMoveSteps()
-        {
-            //show board in console.
-            GD.displayBoard();
-            //see if the game was won
-            GD.checkForWinner();
-            if (GD.getGameOver() == false)
-            {
-                //change the symbol for the next persons turn
-                GD.setCharacterToPlace();
-                //change to AI turn
-                GD.setPlayerTurn(false);
-            }
-            else
-            {
-                disableAllButtons();
-                //Display who won
-                lbl_winner.Text = GD.getWinnerString(GD.getWinner());
-                //Draw line on winning sequence
-            }
-        }
-
-        public void AIMoveSteps()
+        public void AIMakeMove()
         {
             ai.makeMove();
-            //show board in console.
-            GD.displayBoard();
-            //see if the game was won
-            GD.checkForWinner();
-            if (GD.getGameOver() == false)
-            {
-                //change the symbol for the next persons turn
-                GD.setCharacterToPlace();
-                //change to AI turn
-                GD.setPlayerTurn(true);
-                enableAllButtons();
-            }
-            else
+            
+            if(GD.getGameOver() == true)
             {
                 disableAllButtons();
-                //Display who won
-                lbl_winner.Text = GD.getWinnerString(GD.getWinner());
-                //Draw line on winning sequence
+                //display who won
+                displayWinner();
             }
+
+            //allow the player to make their next move
+            enableAllButtons();
+        }
+
+        public void displayWinner()
+        {
+            lbl_winner.Text = GD.getWinnerString(GD.getWinner());
         }
     }
 }

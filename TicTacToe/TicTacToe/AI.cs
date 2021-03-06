@@ -31,6 +31,7 @@ namespace TicTacToe
         }
         public void makeMove()
         {
+            //int[,] possibleMoves = new int[main_GD.getNumRows()*main_GD.getNumCols(),2];
             main_GB = main_GD.getGameBoard();
             Cell cell = new Cell();
             bool moveMade = false;
@@ -46,6 +47,7 @@ namespace TicTacToe
                         cell.getButton().Text = main_GD.getCharacterToPlace().ToString();
                         main_GD.setCellGameBoard(cell, r, c);
                         moveMade = true;
+                        main_GD.makeMove();
                         //afterMoveSteps();
                         break;
                     }
@@ -56,20 +58,5 @@ namespace TicTacToe
                 }
             }
         }
-
-        //public void afterMoveSteps()
-        //{
-        //    //show board in console.
-        //    main_GD.displayBoard();
-        //    //see if the game was won
-        //    main_GD.checkForWinner();
-        //    if (main_GD.getGameOver() == false)
-        //    {
-        //        //change the symbol for the next persons turn
-        //        main_GD.setCharacterToPlace();
-        //        //change to AI turn
-        //        main_GD.setPlayerTurn(true);
-        //    }
-        //}
     }
 }

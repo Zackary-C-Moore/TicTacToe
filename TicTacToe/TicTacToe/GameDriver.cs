@@ -328,5 +328,20 @@ namespace TicTacToe
             Console.WriteLine("===========================================");
         }
 
+        public void makeMove()
+        {
+            //show board in console.
+            displayBoard();
+            //see if the game was won
+            checkForWinner();
+            if (getGameOver() == false)
+            {
+                //change the symbol for the next persons turn
+                setCharacterToPlace();
+                //change to the oposite of whose turn it is now
+                setPlayerTurn(!getPlayerTurn());
+            }
+        }
+
     }
 }
