@@ -11,8 +11,9 @@ namespace TicTacToe
         //0 = computer 1 = player
         bool playerTurn;
         bool gameOver = false;
-        //0 = computer 1 = player
-        bool playerWinner = false;
+        //0 = computer 1 = player 2 = draw -999 = game not over
+        int winner = -999;
+        string[] winnerLookupTable = { "AI Wins!", "Player Wins!", "It's A Draw!" };
         //board
         Cell[,] gameBoard = new Cell[3, 3];
         //x always first
@@ -38,9 +39,9 @@ namespace TicTacToe
         {
             return gameOver;
         }
-        public bool getPlayeWinner()
+        public int getWinner()
         {
-            return playerWinner;
+            return winner;
         }
         public char getCharacterToPlace()
         {
@@ -76,6 +77,11 @@ namespace TicTacToe
             return numCols;
         }
 
+        public string getWinnerString(int i)
+        {
+            return winnerLookupTable[i];
+        }
+
         //Setters
         public void setPlayerTurn(bool x)
         {
@@ -87,9 +93,9 @@ namespace TicTacToe
             gameOver = true;
         }
 
-        public void setPlayerWinner(bool w)
+        public void setWinner(int i)
         {
-            playerWinner = w;
+            winner = i;
         }
 
         public void setCharacterToPlace()
@@ -120,6 +126,11 @@ namespace TicTacToe
         }
 
         //Game Funcitons
+        //I think that this needs to change so when I  introduce the AI functionality I can use this function to evaluate a board
+        //0 for AI win - set in determineWinner()
+        //1 for player win - set in determineWinner()
+        //2 for draw - set in drawCheck()
+        //I do not think that this function needs to return a value becuase in AI class it will make a new board to see who wins 
         public void checkForWinner()
         {
             if(!gameOver)
@@ -142,8 +153,13 @@ namespace TicTacToe
                 gameOver = topDownDiagonalWinCheck();
             }
 
-
-            if (gameOver)
+            if(!gameOver)
+            {
+                gameOver = drawCheck();
+            }
+            //if the game is over and it is not a draw I need to see who won
+            //if the game is over and it is a draw I set the value in drawCheck()
+            if (gameOver && winner != 2)
             {
                 determineWinner();
             }
@@ -265,18 +281,42 @@ namespace TicTacToe
             return false;
         }
 
+        public bool drawCheck()
+        {
+            int cnt = 0;
+            for (int r = 0; r < numRows; r++)
+            {
+                for (int c = 0; c < numCols; c++)
+                {
+                    if (gameBoard[r, c].getValue() != '-')
+                    {
+                        cnt++;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            gameOver = true;
+            //set the winner so I do not call the determineWinner() function from the checkForWinner() function
+            winner = 2;
+            return true;
+        }
+
         public void determineWinner()
         {
             //Console.WriteLine(characterToPlace);
             if(AIChar != characterToPlace)
             {
                 Console.WriteLine("Player Wins");
-                playerWinner = true;
+                winner = 1;
             }
             else
             {
                 Console.WriteLine("AI Wins");
-                playerWinner = false;
+                winner = 0;
+
             }
         }
         public void displayBoard()

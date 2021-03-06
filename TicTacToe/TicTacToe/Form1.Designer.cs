@@ -58,6 +58,7 @@
             this.btn_2_2 = new System.Windows.Forms.Button();
             this.lbl_xText = new System.Windows.Forms.Label();
             this.lbl_Otxt = new System.Windows.Forms.Label();
+            this.lbl_winner = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel_gameBoard.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +70,7 @@
             this.groupBox1.Controls.Add(this.rb_player);
             this.groupBox1.Controls.Add(this.rb_AI);
             this.groupBox1.Controls.Add(this.rb_random);
+            this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(54, 1219);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(381, 158);
@@ -79,9 +81,10 @@
             // rb_player
             // 
             this.rb_player.AutoSize = true;
+            this.rb_player.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_player.Location = new System.Drawing.Point(17, 104);
             this.rb_player.Name = "rb_player";
-            this.rb_player.Size = new System.Drawing.Size(104, 29);
+            this.rb_player.Size = new System.Drawing.Size(122, 39);
             this.rb_player.TabIndex = 2;
             this.rb_player.Text = "Player";
             this.rb_player.UseVisualStyleBackColor = true;
@@ -90,9 +93,10 @@
             // rb_AI
             // 
             this.rb_AI.AutoSize = true;
+            this.rb_AI.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_AI.Location = new System.Drawing.Point(17, 69);
             this.rb_AI.Name = "rb_AI";
-            this.rb_AI.Size = new System.Drawing.Size(62, 29);
+            this.rb_AI.Size = new System.Drawing.Size(70, 39);
             this.rb_AI.TabIndex = 1;
             this.rb_AI.Text = "AI";
             this.rb_AI.UseVisualStyleBackColor = true;
@@ -101,9 +105,10 @@
             // rb_random
             // 
             this.rb_random.AutoSize = true;
+            this.rb_random.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_random.Location = new System.Drawing.Point(17, 34);
             this.rb_random.Name = "rb_random";
-            this.rb_random.Size = new System.Drawing.Size(123, 29);
+            this.rb_random.Size = new System.Drawing.Size(142, 39);
             this.rb_random.TabIndex = 0;
             this.rb_random.Text = "Random";
             this.rb_random.UseVisualStyleBackColor = true;
@@ -112,19 +117,21 @@
             // lbl_errorMsg
             // 
             this.lbl_errorMsg.AutoSize = true;
+            this.lbl_errorMsg.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_errorMsg.ForeColor = System.Drawing.Color.Firebrick;
             this.lbl_errorMsg.Location = new System.Drawing.Point(54, 1384);
             this.lbl_errorMsg.Name = "lbl_errorMsg";
-            this.lbl_errorMsg.Size = new System.Drawing.Size(378, 25);
+            this.lbl_errorMsg.Size = new System.Drawing.Size(470, 35);
             this.lbl_errorMsg.TabIndex = 23;
             this.lbl_errorMsg.Text = "Must choose one of the options above";
             this.lbl_errorMsg.Visible = false;
             // 
             // btn_exitGame
             // 
-            this.btn_exitGame.Location = new System.Drawing.Point(868, 1307);
+            this.btn_exitGame.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exitGame.Location = new System.Drawing.Point(904, 1232);
             this.btn_exitGame.Name = "btn_exitGame";
-            this.btn_exitGame.Size = new System.Drawing.Size(163, 60);
+            this.btn_exitGame.Size = new System.Drawing.Size(188, 69);
             this.btn_exitGame.TabIndex = 26;
             this.btn_exitGame.Text = "Exit Game";
             this.btn_exitGame.UseVisualStyleBackColor = true;
@@ -132,9 +139,10 @@
             // 
             // btn_newGame
             // 
-            this.btn_newGame.Location = new System.Drawing.Point(680, 1307);
+            this.btn_newGame.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_newGame.Location = new System.Drawing.Point(691, 1232);
             this.btn_newGame.Name = "btn_newGame";
-            this.btn_newGame.Size = new System.Drawing.Size(163, 60);
+            this.btn_newGame.Size = new System.Drawing.Size(188, 69);
             this.btn_newGame.TabIndex = 25;
             this.btn_newGame.Text = "New Game";
             this.btn_newGame.UseVisualStyleBackColor = true;
@@ -142,9 +150,10 @@
             // 
             // btn_startGame
             // 
-            this.btn_startGame.Location = new System.Drawing.Point(496, 1307);
+            this.btn_startGame.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_startGame.Location = new System.Drawing.Point(475, 1232);
             this.btn_startGame.Name = "btn_startGame";
-            this.btn_startGame.Size = new System.Drawing.Size(163, 60);
+            this.btn_startGame.Size = new System.Drawing.Size(188, 69);
             this.btn_startGame.TabIndex = 24;
             this.btn_startGame.Text = "Start Game";
             this.btn_startGame.UseVisualStyleBackColor = true;
@@ -379,26 +388,38 @@
             // lbl_xText
             // 
             this.lbl_xText.AutoSize = true;
+            this.lbl_xText.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_xText.Location = new System.Drawing.Point(199, 34);
             this.lbl_xText.Name = "lbl_xText";
-            this.lbl_xText.Size = new System.Drawing.Size(38, 25);
+            this.lbl_xText.Size = new System.Drawing.Size(48, 35);
             this.lbl_xText.TabIndex = 3;
             this.lbl_xText.Text = "X: ";
             // 
             // lbl_Otxt
             // 
             this.lbl_Otxt.AutoSize = true;
+            this.lbl_Otxt.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Otxt.Location = new System.Drawing.Point(199, 69);
             this.lbl_Otxt.Name = "lbl_Otxt";
-            this.lbl_Otxt.Size = new System.Drawing.Size(40, 25);
+            this.lbl_Otxt.Size = new System.Drawing.Size(51, 35);
             this.lbl_Otxt.TabIndex = 4;
             this.lbl_Otxt.Text = "O: ";
+            // 
+            // lbl_winner
+            // 
+            this.lbl_winner.AutoSize = true;
+            this.lbl_winner.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_winner.Location = new System.Drawing.Point(481, 1323);
+            this.lbl_winner.Name = "lbl_winner";
+            this.lbl_winner.Size = new System.Drawing.Size(0, 35);
+            this.lbl_winner.TabIndex = 28;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1474, 1447);
+            this.Controls.Add(this.lbl_winner);
             this.Controls.Add(this.panel_gameBoard);
             this.Controls.Add(this.btn_exitGame);
             this.Controls.Add(this.btn_newGame);
@@ -447,6 +468,7 @@
         private System.Windows.Forms.Button btn_2_2;
         private System.Windows.Forms.Label lbl_Otxt;
         private System.Windows.Forms.Label lbl_xText;
+        private System.Windows.Forms.Label lbl_winner;
     }
 }
 

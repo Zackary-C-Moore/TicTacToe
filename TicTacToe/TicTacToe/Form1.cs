@@ -209,6 +209,16 @@ namespace TicTacToe
             rb_random.Enabled = false;
         }
 
+        public void disableStartButton()
+        {
+            btn_startGame.Enabled = false;
+        }
+
+        public void enableStartButton()
+        {
+            btn_startGame.Enabled = true;
+        }
+
         private void btn_startGame_Click(object sender, EventArgs e)
         {
             if(rb_AI.Checked || rb_player.Checked || rb_random.Checked)
@@ -216,6 +226,7 @@ namespace TicTacToe
                 //Start Game
                 enableAllButtons();
                 disableAllRadioButtons();
+                disableStartButton();
             }
             else
             {
@@ -252,6 +263,7 @@ namespace TicTacToe
             {
                 disableAllButtons();
                 //Display who won
+                lbl_winner.Text = GD.getWinnerString(GD.getWinner());
                 //Draw line on winning sequence
             }
         }
