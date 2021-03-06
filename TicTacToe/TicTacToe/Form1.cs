@@ -13,9 +13,11 @@ namespace TicTacToe
     public partial class Form1 : Form
     {
         private GameDriver GD = new GameDriver();
+        private AI ai;
         public Form1()
         {
             InitializeComponent();
+            ai = new AI(GD, this);
             setupBoard();
             disableAllButtons();
             GD.displayBoard();
@@ -61,11 +63,16 @@ namespace TicTacToe
         private void buttonClickEvent(object sender, EventArgs e)
         {
             //comment this out to keep testing
-            //if (GD.getPlayerTurn() == true)
-            //{
+            if (GD.getPlayerTurn() == true)
+            {
                 Button button = sender as Button;
                 playerMove(button);
-            //}
+                if(GD.getGameOver() == false)
+                {
+                    AIMoveSteps();
+                }
+                
+            }
                 
         }
 
@@ -93,9 +100,9 @@ namespace TicTacToe
             name = name.Substring(posDelim + 2);
             posDelim = name.IndexOf(delim);
             col = Int32.Parse(name.Substring(posDelim + 1));
-
-
             cell = GD.getGameBoardCell(row, col);
+
+            //Make the move
             cell.setValue(characterToPlace);
             cell.getButton().Text = characterToPlace.ToString();
             GD.setCellGameBoard(cell, row, col);
@@ -103,8 +110,6 @@ namespace TicTacToe
             //disable the button that the user pressed
             cell.getButton().Enabled = false;
             
-
-            GD.displayBoard();
 
             afterMoveSteps();
         }
@@ -167,6 +172,7 @@ namespace TicTacToe
 
         public void enableAllButtons()
         {
+            Console.WriteLine("Enabling BUttons");
             for (int r = 0; r < GD.getNumRows(); r++)
             {
                 for (int c = 0; c < GD.getNumCols(); c++)
@@ -224,9 +230,19 @@ namespace TicTacToe
             if(rb_AI.Checked || rb_player.Checked || rb_random.Checked)
             {
                 //Start Game
-                enableAllButtons();
-                disableAllRadioButtons();
-                disableStartButton();
+                if(GD.getPlayerTurn() == true)
+                {
+                    enableAllButtons();
+                    disableAllRadioButtons();
+                    disableStartButton();
+                }
+                else
+                {
+                    disableAllButtons();
+                    disableAllRadioButtons();
+                    disableStartButton();
+                    AIMoveSteps();
+                }
             }
             else
             {
@@ -250,6 +266,8 @@ namespace TicTacToe
 
         public void afterMoveSteps()
         {
+            //show board in console.
+            GD.displayBoard();
             //see if the game was won
             GD.checkForWinner();
             if (GD.getGameOver() == false)
@@ -258,6 +276,30 @@ namespace TicTacToe
                 GD.setCharacterToPlace();
                 //change to AI turn
                 GD.setPlayerTurn(false);
+            }
+            else
+            {
+                disableAllButtons();
+                //Display who won
+                lbl_winner.Text = GD.getWinnerString(GD.getWinner());
+                //Draw line on winning sequence
+            }
+        }
+
+        public void AIMoveSteps()
+        {
+            ai.makeMove();
+            //show board in console.
+            GD.displayBoard();
+            //see if the game was won
+            GD.checkForWinner();
+            if (GD.getGameOver() == false)
+            {
+                //change the symbol for the next persons turn
+                GD.setCharacterToPlace();
+                //change to AI turn
+                GD.setPlayerTurn(true);
+                enableAllButtons();
             }
             else
             {

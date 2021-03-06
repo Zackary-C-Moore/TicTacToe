@@ -283,16 +283,11 @@ namespace TicTacToe
 
         public bool drawCheck()
         {
-            int cnt = 0;
             for (int r = 0; r < numRows; r++)
             {
                 for (int c = 0; c < numCols; c++)
                 {
-                    if (gameBoard[r, c].getValue() != '-')
-                    {
-                        cnt++;
-                    }
-                    else
+                    if (gameBoard[r, c].getValue() == '-')
                     {
                         return false;
                     }
