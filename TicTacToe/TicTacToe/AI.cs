@@ -8,8 +8,8 @@ namespace TicTacToe
 {
     class AI
     {
-        private Cell[,] main_GB;
         private GameDriver main_GD;
+        private List<Cell> possibleMoves;
 
         public AI(GameDriver gd)
         {
@@ -17,40 +17,42 @@ namespace TicTacToe
         }
         public void findMove()
         {
+            getPossibleMoves();
             randomMove();
         }
 
         public void randomMove()
         {
-            List<Cell> possibleMoves = new List<Cell>();
-            main_GB = main_GD.getGameBoard();
-            Cell cell = new Cell();
             int randomIndex;
             Random rand = new Random();
             Cell moveToMake = new Cell();
 
+            randomIndex = rand.Next(0, possibleMoves.Count);
+            moveToMake = possibleMoves[randomIndex];
+
+            makeMove(moveToMake);
+        }
+
+        public void getPossibleMoves()
+        {
+            possibleMoves = new List<Cell>();
+            Cell cell = new Cell();
             for (int r = 0; r < main_GD.getNumRows(); r++)
             {
                 for (int c = 0; c < main_GD.getNumCols(); c++)
                 {
-                    cell = main_GB[r, c];
-                    if (main_GB[r, c].getValue() == '-')
+                    cell = main_GD.getGameBoard()[r, c];
+                    if (cell.getValue() == '-')
                     {
                         possibleMoves.Add(cell);
                     }
                 }
             }
-
-            
-            randomIndex = rand.Next(0, possibleMoves.Count);
-            moveToMake = possibleMoves[randomIndex];
-
-            makeMove(moveToMake);
-
         }
 
         public void makeMove(Cell moveToMake)
         {
+            Console.WriteLine(moveToMake.getColLetter() + " " + moveToMake.getRow());
             moveToMake.setValue(main_GD.getCharacterToPlace());
             moveToMake.getButton().Text = main_GD.getCharacterToPlace().ToString();
             moveToMake.getButton().Enabled = false;

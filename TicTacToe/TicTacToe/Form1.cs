@@ -12,16 +12,25 @@ namespace TicTacToe
 {
     public partial class Form1 : Form
     {
-        private GameDriver GD = new GameDriver();
+        private GameDriver GD;
         private AI ai;
         public Form1()
         {
             InitializeComponent();
+            setupGame();
+
+        }
+
+        public void setupGame()
+        {
+            GD = new GameDriver();
             ai = new AI(GD);
+            //cannot have a new game until one is started
+            //enable this button on the start game button press
+            btn_newGame.Enabled = false;
             setupBoard();
             disableAllButtons();
             GD.displayBoard();
-
         }
 
         public void setupBoard()
@@ -39,6 +48,8 @@ namespace TicTacToe
             //Cycle through all of the buttons on the form.
             foreach (var button in this.panel_gameBoard.Controls.OfType<Button>())
             {
+                //set all of the button values to nothing used for restarting the game
+                button.Text = null;
                 //parse the name of the button to get the row and col information
                 //names for the cells follow a specific naming standard (row by column eg. btn_0_0).
                 //I will convert the columns to be letters in the GameDriver class.
@@ -243,10 +254,12 @@ namespace TicTacToe
         //used to start the game.
         private void btn_startGame_Click(object sender, EventArgs e)
         {
+            
             if(rb_AI.Checked || rb_player.Checked || rb_random.Checked)
             {
+                btn_newGame.Enabled = true;
                 //Start Game
-                if(GD.getPlayerTurn() == true)
+                if (GD.getPlayerTurn() == true)
                 {
                     enableAllButtons();
                     disableAllRadioButtons();
@@ -272,9 +285,19 @@ namespace TicTacToe
 
         private void btn_newGame_Click(object sender, EventArgs e)
         {
-            Form1 frm1 = new Form1();
-            frm1.Show();
-            this.Hide();
+            enableStartButton();
+            enableAllRadioButtons();
+
+            rb_AI.Checked = false;
+            rb_player.Checked = false;
+            rb_random.Checked = false;
+
+            lbl_winner.Text = null;
+            lbl_Otxt.Text = null;
+            lbl_xText.Text = null;
+
+            startGame();
+
         }
 
         private void btn_exitGame_Click(object sender, EventArgs e)
