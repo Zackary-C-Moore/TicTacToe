@@ -52,7 +52,6 @@ namespace TicTacToe
 
         public void makeMove(Cell moveToMake)
         {
-            Console.WriteLine(moveToMake.getColLetter() + " " + moveToMake.getRow());
             moveToMake.setValue(main_GD.getCharacterToPlace());
             moveToMake.getButton().Text = main_GD.getCharacterToPlace().ToString();
             moveToMake.getButton().Enabled = false;

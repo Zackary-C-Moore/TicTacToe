@@ -197,7 +197,6 @@ namespace TicTacToe
 
         public void enableAllButtons()
         {
-            Console.WriteLine("Enabling BUttons");
             for (int r = 0; r < GD.getNumRows(); r++)
             {
                 for (int c = 0; c < GD.getNumCols(); c++)
@@ -296,7 +295,7 @@ namespace TicTacToe
             lbl_Otxt.Text = null;
             lbl_xText.Text = null;
 
-            startGame();
+            setupGame();
 
         }
 

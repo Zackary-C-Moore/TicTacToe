@@ -14,18 +14,20 @@ namespace TicTacToe
         //0 = computer 1 = player 2 = draw -999 = game not over
         int winner = -999;
         string[] winnerLookupTable = { "AI Wins!", "Player Wins!", "It's A Draw!" };
+        int numRows = 3;
+        int numCols = 3;
         //board
-        Cell[,] gameBoard = new Cell[3, 3];
+        Cell[,] gameBoard;
         //x always first
         char characterToPlace;
         char[] columnLookupTable = { 'A', 'B', 'C' };
         char AIChar;
 
-        int numRows = 3;
-        int numCols = 3;
+        
 
         public GameDriver()
         {
+            gameBoard = new Cell[numRows, numCols];
             characterToPlace = 'X';
         }
 
