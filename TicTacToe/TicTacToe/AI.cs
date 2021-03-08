@@ -10,53 +10,52 @@ namespace TicTacToe
     {
         private Cell[,] main_GB;
         private GameDriver main_GD;
-        private Form1 main_form;
 
-        public AI(GameDriver gd, Form1 frm)
+        public AI(GameDriver gd)
         {
-            main_GD = gd;
-            main_form = frm;
-
-            //Console.WriteLine("=================AI================");
-            //for (int r = 0; r < main_GD.getNumRows(); r++)
-            //{
-            //    for(int c = 0; c < main_GD.getNumCols(); c++)
-            //    {
-            //        Console.Write(main_GB[r, c].getValue());
-            //    }
-
-            //    Console.WriteLine();
-            //}
-            
+            main_GD = gd;    
         }
-        public void makeMove()
+        public void findMove()
         {
-            //int[,] possibleMoves = new int[main_GD.getNumRows()*main_GD.getNumCols(),2];
+            randomMove();
+        }
+
+        public void randomMove()
+        {
+            List<Cell> possibleMoves = new List<Cell>();
             main_GB = main_GD.getGameBoard();
             Cell cell = new Cell();
-            bool moveMade = false;
+            int randomIndex;
+            Random rand = new Random();
+            Cell moveToMake = new Cell();
 
             for (int r = 0; r < main_GD.getNumRows(); r++)
             {
                 for (int c = 0; c < main_GD.getNumCols(); c++)
                 {
                     cell = main_GB[r, c];
-                    if(main_GB[r,c].getValue() == '-')
+                    if (main_GB[r, c].getValue() == '-')
                     {
-                        cell.setValue(main_GD.getCharacterToPlace());
-                        cell.getButton().Text = main_GD.getCharacterToPlace().ToString();
-                        main_GD.setCellGameBoard(cell, r, c);
-                        moveMade = true;
-                        main_GD.makeMove();
-                        //afterMoveSteps();
-                        break;
+                        possibleMoves.Add(cell);
                     }
                 }
-                if(moveMade)
-                {
-                    break;
-                }
             }
+
+            
+            randomIndex = rand.Next(0, possibleMoves.Count);
+            moveToMake = possibleMoves[randomIndex];
+
+            makeMove(moveToMake);
+
+        }
+
+        public void makeMove(Cell moveToMake)
+        {
+            moveToMake.setValue(main_GD.getCharacterToPlace());
+            moveToMake.getButton().Text = main_GD.getCharacterToPlace().ToString();
+            moveToMake.getButton().Enabled = false;
+            main_GD.setCellGameBoard(moveToMake, moveToMake.getRow(), moveToMake.getCol());
+            main_GD.performMoveActionsOnBoard();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace TicTacToe
         public Form1()
         {
             InitializeComponent();
-            ai = new AI(GD, this);
+            ai = new AI(GD);
             setupBoard();
             disableAllButtons();
             GD.displayBoard();
@@ -51,7 +51,7 @@ namespace TicTacToe
 
                 //Console.WriteLine(row + "  " + col);
 
-                newCell = new Cell(row, GD.getColumnLetter(col), button, '-');
+                newCell = new Cell(row, col, GD.getColumnLetter(col), button, '-');
 
                 board[row, col] = newCell;
             }
@@ -75,7 +75,7 @@ namespace TicTacToe
                 if (GD.getGameOver() == false)
                 {
                     //After the user makes their move the ai can make its move.
-                    AIMakeMove();
+                    AIDetermineMove();
                     ////handles gui and making the move
                     //afterMoveSteps();
                 }
@@ -86,7 +86,6 @@ namespace TicTacToe
 
         public void playerMove(Button button)
         {
-            Console.WriteLine("Here");
             string name;
             char delim = '_';
             int posDelim;
@@ -119,7 +118,7 @@ namespace TicTacToe
             cell.getButton().Enabled = false;
 
             //make the move on the board array and determine what to do after the specified move.
-            GD.makeMove();
+            GD.performMoveActionsOnBoard();
 
             if (GD.getGameOver() == true)
             {
@@ -260,9 +259,7 @@ namespace TicTacToe
                     disableStartButton();
 
                     //used when the ai needs to go first
-                    AIMakeMove();
-                    ////handles gui and making the move
-                    //afterMoveSteps();
+                    AIDetermineMove();
                 }
             }
             else
@@ -285,9 +282,9 @@ namespace TicTacToe
             Application.Exit();
         }
 
-        public void AIMakeMove()
+        public void AIDetermineMove()
         {
-            ai.makeMove();
+            ai.findMove();
             
             if(GD.getGameOver() == true)
             {

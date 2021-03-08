@@ -328,7 +328,7 @@ namespace TicTacToe
             Console.WriteLine("===========================================");
         }
 
-        public void makeMove()
+        public void performMoveActionsOnBoard()
         {
             //show board in console.
             displayBoard();

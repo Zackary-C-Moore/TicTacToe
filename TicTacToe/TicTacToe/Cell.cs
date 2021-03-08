@@ -11,8 +11,11 @@ namespace TicTacToe
     {
         //1 2 or 3
         int row;
+        //This seems redundant but it will ensure that I do not have to put a bunch of if statements everywhere
+        //col is for the computer colLetter is the for user.
+        int col;
         //a b or c
-        char col;
+        char colLetter;
         public Button btn;
         //x or o
         char value;
@@ -22,10 +25,11 @@ namespace TicTacToe
 
         }
 
-        public Cell(int row, char col, Button btn, char value)
+        public Cell(int row, int col, char colLetter, Button btn, char value)
         {
             this.row = row;
             this.col = col;
+            this.colLetter = colLetter;
             this.btn = btn;
             this.value = value;
         }
@@ -42,9 +46,14 @@ namespace TicTacToe
             return row;
         }
 
-        public char getCol()
+        public int getCol()
         {
             return col;
+        }
+
+        public char getColLetter()
+        {
+            return colLetter;
         }
 
         public Button getButton()
