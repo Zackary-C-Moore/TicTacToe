@@ -22,6 +22,7 @@ namespace TicTacToe
         char characterToPlace;
         char[] columnLookupTable = { 'A', 'B', 'C' };
         char AIChar;
+        char playerChar;
 
         
 
@@ -64,9 +65,14 @@ namespace TicTacToe
             return columnLookupTable[n];
         }
 
-        public char getAIChactacter()
+        public char getAICharacter()
         {
             return AIChar;
+        }
+
+        public char getPlayerCharacter()
+        {
+            return playerChar;
         }
 
         public int getNumRows()
@@ -90,9 +96,9 @@ namespace TicTacToe
             playerTurn = x;
         }
 
-        public void setGameOver()
+        public void setGameOver(bool g)
         {
-            gameOver = true;
+            gameOver = g;
         }
 
         public void setWinner(int i)
@@ -112,6 +118,11 @@ namespace TicTacToe
             }
         }
 
+        public void setCharacterToPlace(char c)
+        {
+            characterToPlace = c;
+        }
+
         public void setGameBoard(Cell[,] b)
         {
             gameBoard = b;
@@ -127,13 +138,18 @@ namespace TicTacToe
             AIChar = c;
         }
 
+        public void setPlayerCharacter(char c)
+        {
+            playerChar = c;
+        }
+
         //Game Funcitons
         //I think that this needs to change so when I  introduce the AI functionality I can use this function to evaluate a board
         //0 for AI win - set in determineWinner()
         //1 for player win - set in determineWinner()
         //2 for draw - set in drawCheck()
         //I do not think that this function needs to return a value becuase in AI class it will make a new board to see who wins 
-        public void checkForWinner()
+        public int checkForWinner()
         {
             if(!gameOver)
             {
@@ -165,6 +181,8 @@ namespace TicTacToe
             {
                 determineWinner();
             }
+
+            return winner;
         }
 
         public bool horizontalWinCheck()
@@ -333,7 +351,7 @@ namespace TicTacToe
         public void performMoveActionsOnBoard()
         {
             //show board in console.
-            displayBoard();
+            //displayBoard();
             //see if the game was won
             checkForWinner();
             if (getGameOver() == false)

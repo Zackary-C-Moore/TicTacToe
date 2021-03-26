@@ -40,6 +40,16 @@ namespace TicTacToe
             value = v;
         }
 
+        public void setRow(int r)
+        {
+            row = r;
+        }
+        
+        public void setCol(int c)
+        {
+            col = c;
+        }
+
         //getters
         public int getRow()
         {

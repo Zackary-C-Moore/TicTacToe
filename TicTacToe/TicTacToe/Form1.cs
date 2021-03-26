@@ -158,6 +158,7 @@ namespace TicTacToe
                 //this will be determined by who goes first
                 //The player will determine who goes first (random, AI, or Player)
                 GD.setAICharacter('X');
+                GD.setPlayerCharacter('O');
                 GD.setPlayerTurn(false);
 
                 lbl_Otxt.Text = "O: Player";
@@ -166,6 +167,7 @@ namespace TicTacToe
             else if (rb.Name == "rb_player")
             {
                 GD.setAICharacter('O');
+                GD.setPlayerCharacter('X');
                 GD.setPlayerTurn(true);
 
                 lbl_Otxt.Text += "O: AI";
@@ -179,6 +181,7 @@ namespace TicTacToe
                 if (num == 0)
                 {
                     GD.setAICharacter('X');
+                    GD.setPlayerCharacter('O');
                     GD.setPlayerTurn(false);
 
                     lbl_Otxt.Text += "O: Player";
@@ -187,6 +190,7 @@ namespace TicTacToe
                 else
                 {
                     GD.setAICharacter('O');
+                    GD.setPlayerCharacter('X');
                     GD.setPlayerTurn(true);
 
                     lbl_Otxt.Text += "O: AI";

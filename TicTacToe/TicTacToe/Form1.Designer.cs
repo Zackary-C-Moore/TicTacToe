@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_Otxt = new System.Windows.Forms.Label();
+            this.lbl_xText = new System.Windows.Forms.Label();
             this.rb_player = new System.Windows.Forms.RadioButton();
             this.rb_AI = new System.Windows.Forms.RadioButton();
             this.rb_random = new System.Windows.Forms.RadioButton();
@@ -56,8 +58,6 @@
             this.btn_2_0 = new System.Windows.Forms.Button();
             this.btn_2_1 = new System.Windows.Forms.Button();
             this.btn_2_2 = new System.Windows.Forms.Button();
-            this.lbl_xText = new System.Windows.Forms.Label();
-            this.lbl_Otxt = new System.Windows.Forms.Label();
             this.lbl_winner = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel_gameBoard.SuspendLayout();
@@ -77,6 +77,26 @@
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Who goes first...";
+            // 
+            // lbl_Otxt
+            // 
+            this.lbl_Otxt.AutoSize = true;
+            this.lbl_Otxt.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Otxt.Location = new System.Drawing.Point(199, 69);
+            this.lbl_Otxt.Name = "lbl_Otxt";
+            this.lbl_Otxt.Size = new System.Drawing.Size(51, 35);
+            this.lbl_Otxt.TabIndex = 4;
+            this.lbl_Otxt.Text = "O: ";
+            // 
+            // lbl_xText
+            // 
+            this.lbl_xText.AutoSize = true;
+            this.lbl_xText.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_xText.Location = new System.Drawing.Point(199, 34);
+            this.lbl_xText.Name = "lbl_xText";
+            this.lbl_xText.Size = new System.Drawing.Size(48, 35);
+            this.lbl_xText.TabIndex = 3;
+            this.lbl_xText.Text = "X: ";
             // 
             // rb_player
             // 
@@ -384,26 +404,6 @@
             this.btn_2_2.TabIndex = 19;
             this.btn_2_2.UseVisualStyleBackColor = true;
             this.btn_2_2.Click += new System.EventHandler(this.buttonClickEvent);
-            // 
-            // lbl_xText
-            // 
-            this.lbl_xText.AutoSize = true;
-            this.lbl_xText.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_xText.Location = new System.Drawing.Point(199, 34);
-            this.lbl_xText.Name = "lbl_xText";
-            this.lbl_xText.Size = new System.Drawing.Size(48, 35);
-            this.lbl_xText.TabIndex = 3;
-            this.lbl_xText.Text = "X: ";
-            // 
-            // lbl_Otxt
-            // 
-            this.lbl_Otxt.AutoSize = true;
-            this.lbl_Otxt.Font = new System.Drawing.Font("Trebuchet MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Otxt.Location = new System.Drawing.Point(199, 69);
-            this.lbl_Otxt.Name = "lbl_Otxt";
-            this.lbl_Otxt.Size = new System.Drawing.Size(51, 35);
-            this.lbl_Otxt.TabIndex = 4;
-            this.lbl_Otxt.Text = "O: ";
             // 
             // lbl_winner
             // 
