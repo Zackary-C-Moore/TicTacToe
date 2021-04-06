@@ -1,2 +1,2 @@
 # TicTacToe
-C# Tic Tac Toe MiniMax Algorithm Alpha Beta Pruning
+C# Tic Tac Toe MiniMax Algorithm
